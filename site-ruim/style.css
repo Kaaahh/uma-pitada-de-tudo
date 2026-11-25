@@ -1,0 +1,426 @@
+/* SITE RUIM - UMA PITADA DE TUDO */
+/* Problemas visuais intencionais para trabalho de UI/UX */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #eeeeee;
+    font-family: Arial, sans-serif;
+    color: #252525;
+}
+
+/* FAIXA SUPERIOR */
+
+.faixa-topo {
+    background: #dcf51b;
+    color: #e51b1b;
+    text-align: center;
+    padding: 13px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: #70b52b;
+    padding: 22px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 29px;
+    margin: 0;
+}
+
+header button {
+    background: #ff6b00;
+    color: white;
+    border: 3px solid yellow;
+    padding: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* MENU CONFUSO */
+
+nav {
+    background: #315d14;
+    padding: 14px 5px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffff00;
+    font-size: 13px;
+    margin: 0 5px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background: red;
+    color: white;
+}
+
+/* ESTRUTURA */
+
+.layout {
+    display: flex;
+    gap: 9px;
+    padding: 12px;
+    align-items: flex-start;
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* BANNER */
+
+.banner {
+    min-height: 260px;
+    padding: 28px;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15)
+        ),
+        linear-gradient(
+            120deg,
+            #a4c96d,
+            #f8cb72,
+            #dd7658
+        );
+    text-align: center;
+    border: 5px ridge #d2a638;
+}
+
+.banner h2 {
+    font-family: Impact, sans-serif;
+    font-size: 39px;
+    color: yellow;
+    text-shadow: 2px 2px red;
+}
+
+.banner p {
+    color: white;
+    font-size: 12px;
+}
+
+.banner button {
+    background: #ff00aa;
+    border: 4px solid yellow;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* BUSCA PEQUENA */
+
+.pesquisa {
+    margin: 14px 0;
+    padding: 7px;
+    background: #d5d5d5;
+    font-size: 12px;
+}
+
+.pesquisa input {
+    width: 115px;
+    padding: 4px;
+    font-size: 11px;
+}
+
+.pesquisa button {
+    background: orange;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+/* RECEITAS */
+
+#receitas h2 {
+    background: yellow;
+    color: red;
+    font-size: 23px;
+    padding: 8px;
+    font-family: Georgia, serif;
+}
+
+.lista-receitas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 7px 11px;
+}
+
+.card-receita {
+    flex: 0 0 31%;
+    background: #fff4c9;
+    border: 3px solid orange;
+    padding: 8px;
+    text-align: center;
+}
+
+.card-receita:nth-child(1) { order: 8; flex-basis: 43%; transform: rotate(-2deg); }
+.card-receita:nth-child(2) { order: 3; flex-basis: 26%; margin-top: 24px; text-align: left; }
+.card-receita:nth-child(3) { order: 10; flex-basis: 35%; transform: rotate(1.5deg); }
+.card-receita:nth-child(4) { order: 1; flex-basis: 24%; margin-top: 11px; }
+.card-receita:nth-child(5) { order: 7; flex-basis: 38%; transform: rotate(2deg); text-align: left; }
+.card-receita:nth-child(6) { order: 4; flex-basis: 27%; margin-top: 30px; }
+.card-receita:nth-child(7) { order: 11; flex-basis: 29%; transform: rotate(-1.5deg); }
+.card-receita:nth-child(8) { order: 2; flex-basis: 42%; margin-top: 19px; }
+.card-receita:nth-child(9) { order: 12; flex-basis: 25%; text-align: right; }
+.card-receita:nth-child(10) { order: 5; flex-basis: 36%; transform: rotate(1deg); }
+.card-receita:nth-child(11) { order: 9; flex-basis: 28%; margin-top: 27px; }
+.card-receita:nth-child(12) { order: 6; flex-basis: 33%; transform: rotate(-1deg); }
+
+.card-receita:nth-child(2n) {
+    background: #d6f5ff;
+    border-color: #00a5ff;
+}
+
+.card-receita:nth-child(3n) {
+    background: #ffd7ef;
+    border-color: #f00089;
+}
+
+.card-receita h3 {
+    font-size: 17px;
+    color: #b22121;
+}
+
+.card-receita p {
+    font-size: 11px;
+}
+
+.card-receita button {
+    background: #f15a24;
+    color: white;
+    padding: 8px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.card-receita:nth-child(even) button {
+    background: #7643cc;
+}
+
+.card-receita img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.card-receita:nth-child(3n) img {
+    height: 75px;
+}
+
+.card-receita:nth-child(4n) img {
+    height: 175px;
+}
+
+.imagem-receita {
+    background: #ffc977;
+    padding: 20px;
+    font-size: 55px;
+}
+
+/* ANÚNCIOS */
+
+aside {
+    width: 245px;
+    flex-shrink: 0;
+}
+
+.anuncio {
+    min-height: 155px;
+    padding: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+    border: 4px dashed black;
+}
+
+.anuncio h2 {
+    font-size: 20px;
+}
+
+.anuncio p {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.anuncio button {
+    padding: 9px;
+    background: red;
+    color: white;
+    border: 3px solid yellow;
+    cursor: pointer;
+}
+
+.anuncio1 {
+    background: #ff3198;
+}
+
+.anuncio2 {
+    background: #00d9ed;
+}
+
+.anuncio3 {
+    background: #ffdc00;
+}
+
+.anuncio4 {
+    background: #9bdd31;
+}
+
+/* DETALHES DAS RECEITAS */
+
+.detalhes {
+    background: #fff7d6;
+    border: 5px solid orange;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.detalhes h2 {
+    color: red;
+    font-family: Georgia, serif;
+}
+
+.detalhes button {
+    background: #ff7800;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.detalhes li {
+    margin-bottom: 9px;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #4c2920;
+    color: #9c8b72;
+    padding: 15px;
+    text-align: center;
+    font-size: 11px;
+}
+
+footer h3 {
+    color: #bc9e40;
+}
+
+/* POP-UP */
+
+.fundo-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup {
+    width: 390px;
+    max-width: 95%;
+    background: white;
+    border: 6px solid red;
+    padding: 22px;
+    text-align: center;
+    position: relative;
+    box-shadow: 8px 8px 0 #333;
+}
+
+.popup h2 {
+    background: red;
+    color: white;
+    margin: -22px -22px 18px;
+    padding: 13px;
+}
+
+.popup h1 {
+    color: red;
+    font-size: 35px;
+}
+
+.botao-popup {
+    background: #27b43b;
+    color: white;
+    padding: 15px;
+    border: 4px solid yellow;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #dddddd;
+    border: 1px solid black;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.aviso-ficticio {
+    font-size: 10px;
+    color: #777;
+}
+
+/* CADASTRO */
+
+.cadastro form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.cadastro input {
+    padding: 9px;
+}
+
+.cadastro form button {
+    background: #ff6600;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* ESCONDER ELEMENTOS */
+
+.escondido {
+    display: none !important;
+}
+
+/* RESPONSIVIDADE LIMITADA INTENCIONALMENTE */
+
+@media (max-width: 700px) {
+    .layout {
+        min-width: 850px;
+    }
+
+    nav {
+        min-width: 850px;
+    }
+
+    header {
+        min-width: 850px;
+    }
+
+    .faixa-topo {
+        min-width: 850px;
+    }
+}

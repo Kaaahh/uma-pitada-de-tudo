@@ -1,0 +1,1448 @@
+/* ========================================
+   UMA PITADA DE TUDO - SITE MELHORADO
+   Projeto acadêmico de UI/UX
+======================================== */
+
+/* CORES E CONFIGURAÇÕES */
+
+:root {
+    --verde: #365b46;
+    --verde-escuro: #253f32;
+    --verde-claro: #e6eee5;
+    --creme: #faf7f0;
+    --branco: #ffffff;
+    --terracota: #c57b5c;
+    --texto: #303b32;
+    --cinza: #69736b;
+    --borda: #e7e7df;
+    --sombra: 0 12px 35px rgba(35, 55, 42, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    background: var(--branco);
+    color: var(--texto);
+    font-family: "DM Sans", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+.escondido {
+    display: none !important;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1,
+h2 {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--terracota);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--borda);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.025);
+}
+
+.cabecalho-conteudo {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--verde);
+    white-space: nowrap;
+}
+
+.logo strong {
+    color: var(--terracota);
+}
+
+.logo-icone {
+    display: block;
+    width: 84px;
+    height: 84px;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--terracota);
+}
+
+.botao-menu {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--verde);
+    font-size: 29px;
+}
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 24px;
+    border-radius: 9px;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+}
+
+.botao-verde {
+    background: var(--verde);
+    color: white;
+}
+
+.botao-verde:hover {
+    background: var(--verde-escuro);
+    box-shadow: var(--sombra);
+}
+
+.botao-claro {
+    background: white;
+    color: var(--verde-escuro);
+}
+
+.botao-claro:hover {
+    background: var(--creme);
+}
+
+.botao-largo {
+    width: 100%;
+}
+
+/* ========================================
+   BANNER PRINCIPAL
+======================================== */
+
+.hero {
+    min-height: 570px;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(24, 37, 27, 0.82) 0%,
+            rgba(24, 37, 27, 0.48) 50%,
+            rgba(24, 37, 27, 0.12) 100%
+        ),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?w=1600&q=90");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-conteudo {
+    color: white;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.etiqueta {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f5d5bd;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    max-width: 650px;
+    font-size: clamp(44px, 5.5vw, 74px);
+    line-height: 1.13;
+    margin-bottom: 24px;
+}
+
+.hero h1 em {
+    display: block;
+    color: #e6c2a8;
+    font-weight: 500;
+}
+
+.hero p {
+    max-width: 490px;
+    font-size: 17px;
+    color: #f0f0e9;
+    margin-bottom: 32px;
+}
+
+/* ========================================
+   PESQUISA
+======================================== */
+
+.busca-secao {
+    position: relative;
+    z-index: 2;
+    margin-top: -35px;
+}
+
+.busca-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 13px 14px 13px 24px;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--borda);
+}
+
+.busca-icone {
+    color: var(--verde);
+    font-size: 30px;
+    line-height: 1;
+}
+
+.busca-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 0;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: var(--texto);
+}
+
+.busca-box input:focus-visible {
+    outline: 2px solid var(--terracota);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+.busca-box input::placeholder {
+    color: #818b83;
+}
+
+/* ========================================
+   SEÇÕES E TÍTULOS
+======================================== */
+
+.secao {
+    padding: 95px 0;
+}
+
+.secao-creme {
+    background: var(--creme);
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 38px;
+}
+
+.subtitulo {
+    display: inline-block;
+    color: #a25b3e;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.titulo-secao h2,
+.ingredientes-texto h2,
+.sobre h2 {
+    font-size: clamp(31px, 3.4vw, 46px);
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+}
+
+.titulo-secao p {
+    color: var(--cinza);
+    margin-bottom: 0;
+}
+
+.link-botao {
+    background: none;
+    border: none;
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.link-botao:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   CATEGORIAS
+======================================== */
+
+.grade-categorias {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.categoria-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 265px;
+    padding: 0;
+    border: none;
+    border-radius: 15px;
+    background: var(--verde-claro);
+    text-align: left;
+    box-shadow: var(--sombra);
+}
+
+.categoria-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.categoria-card:hover img {
+    transform: scale(1.08);
+}
+
+.categoria-card::after {
+    content: "";
+    position: absolute;
+    inset: 35% 0 0;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.77)
+    );
+}
+
+.categoria-nome {
+    position: absolute;
+    z-index: 1;
+    bottom: 18px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.categoria-nome span {
+    font-size: 21px;
+}
+
+/* ========================================
+   FILTROS DE RECEITAS
+======================================== */
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filtro {
+    padding: 10px 20px;
+    border: 1px solid #d7dfd6;
+    border-radius: 30px;
+    background: white;
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background: var(--verde);
+    color: white;
+    border-color: var(--verde);
+}
+
+.resultado-busca {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.resultado-busca:empty {
+    display: none;
+}
+
+/* ========================================
+   CARDS DE RECEITAS
+======================================== */
+
+.grade-receitas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.receita-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 17px;
+    border: 1px solid var(--borda);
+    box-shadow: 0 6px 20px rgba(30, 45, 32, 0.045);
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.receita-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.receita-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.receita-card-conteudo {
+    padding: 22px;
+}
+
+.receita-categoria {
+    color: #a25b3e;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.receita-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    color: var(--verde-escuro);
+    margin: 10px 0 14px;
+}
+
+.receita-informacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--cinza);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.receita-card button {
+    width: 100%;
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.receita-card button:hover {
+    background: var(--verde);
+    color: white;
+}
+
+/* ========================================
+   RECEITAS PELO MUNDO
+======================================== */
+
+.grade-paises {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.pais-card {
+    min-height: 235px;
+    background: #f3f6f0;
+    border: 1px solid #e1e9de;
+    border-radius: 15px;
+    padding: 26px;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.pais-card:nth-child(2) {
+    background: #fcf2e9;
+    border-color: #f0e4d7;
+}
+
+.pais-card:nth-child(3) {
+    background: #f2f2fa;
+    border-color: #e4e4f0;
+}
+
+.pais-card:nth-child(4) {
+    background: #f9eff1;
+    border-color: #f0e0e4;
+}
+
+.pais-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.bandeira {
+    display: block;
+    font-size: 45px;
+    margin-bottom: 17px;
+}
+
+.pais-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--verde-escuro);
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.pais-card p {
+    color: var(--cinza);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.pais-seta {
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ========================================
+   BUSCA POR INGREDIENTES
+======================================== */
+
+.secao-ingredientes {
+    background: var(--verde-claro);
+}
+
+.ingredientes-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.ingredientes-texto h2 {
+    max-width: 420px;
+    font-size: clamp(37px, 4vw, 56px);
+}
+
+.ingredientes-texto h2 em {
+    color: var(--terracota);
+}
+
+.ingredientes-texto p {
+    color: var(--cinza);
+    max-width: 420px;
+}
+
+.ingredientes-ilustracao {
+    margin-top: 32px;
+    perspective: 700px;
+    width: fit-content;
+}
+
+.geladeira-animacao {
+    position: relative;
+    width: 112px;
+    height: 166px;
+    border: 5px solid #d5ddd7;
+    border-radius: 12px;
+    background: #e9eee9;
+    box-shadow: 0 8px 0 #c6d0c8, 0 14px 22px rgba(35, 55, 42, 0.12);
+    transform-style: preserve-3d;
+}
+
+.geladeira-cabine {
+    position: absolute;
+    inset: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #465b4c, #657667);
+}
+
+.geladeira-item {
+    position: absolute;
+    z-index: 1;
+}
+
+.geladeira-leite {
+    top: 13px;
+    right: 12px;
+    width: 23px;
+    height: 36px;
+    border: 1px solid #d8e1e4;
+    border-radius: 3px 3px 4px 4px;
+    background: linear-gradient(90deg, #fff 0 66%, #edf4f5 66% 100%);
+    clip-path: polygon(0 17%, 52% 0, 100% 17%, 100% 100%, 0 100%);
+}
+
+.geladeira-leite::before {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 7px;
+    height: 5px;
+    border-radius: 2px 2px 1px 1px;
+    background: #d7e5e8;
+    box-shadow: inset 0 1px #fff;
+    content: "";
+}
+
+.geladeira-leite::after {
+    position: absolute;
+    top: 21px;
+    right: 2px;
+    left: 2px;
+    height: 9px;
+    border-radius: 1px;
+    background: linear-gradient(#edf5f5 0 28%, #a9cbd0 28% 78%, #d7e8e8 78%);
+    box-shadow: 0 1px 2px rgba(48, 77, 80, 0.18);
+    content: "";
+}
+
+.geladeira-ovos {
+    top: 69px;
+    left: 12px;
+    width: 36px;
+    height: 18px;
+    border: 1px solid #bd9f73;
+    border-radius: 4px 4px 7px 7px;
+    background:
+        radial-gradient(ellipse at 20% 15%, #fff8e9 0 3px, #e8d5b3 3.5px, transparent 4px),
+        radial-gradient(ellipse at 50% 15%, #fff8e9 0 3px, #e8d5b3 3.5px, transparent 4px),
+        radial-gradient(ellipse at 80% 15%, #fff8e9 0 3px, #e8d5b3 3.5px, transparent 4px),
+        linear-gradient(145deg, #ead7b6, #c9aa7d);
+    box-shadow: inset 0 2px rgba(255, 248, 231, 0.65), 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.geladeira-tomate {
+    bottom: 12px;
+    left: 17px;
+    width: 20px;
+    height: 19px;
+    border-radius: 48% 48% 52% 52%;
+    background: radial-gradient(ellipse at 32% 25%, #f28a70 0 2px, #df614d 3px, #b94338 100%);
+    box-shadow: inset -3px -2px 0 rgba(150, 54, 41, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.geladeira-tomate::before {
+    position: absolute;
+    top: -4px;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    background: #6d8d5d;
+    clip-path: polygon(50% 0, 62% 38%, 100% 25%, 72% 58%, 90% 92%, 50% 68%, 12% 100%, 28% 58%, 0 30%, 40% 40%);
+    content: "";
+}
+
+.geladeira-alface {
+    right: 12px;
+    bottom: 12px;
+    width: 25px;
+    height: 23px;
+    border-radius: 48% 52% 42% 58%;
+    background:
+        radial-gradient(ellipse at 22% 30%, #bad19c 0 5px, transparent 5.5px),
+        radial-gradient(ellipse at 72% 26%, #aec98f 0 6px, transparent 6.5px),
+        radial-gradient(ellipse at 27% 68%, #99b97c 0 6px, transparent 6.5px),
+        radial-gradient(ellipse at 72% 68%, #89a96d 0 7px, transparent 7.5px),
+        #789963;
+    box-shadow: inset 0 0 0 1px rgba(67, 102, 57, 0.24), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.geladeira-alface::after {
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    width: 1px;
+    height: 12px;
+    background: rgba(235, 244, 216, 0.7);
+    transform: rotate(20deg);
+    content: "";
+}
+
+.geladeira-prateleira {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 4px;
+    background: #d7dfd7;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+}
+
+.geladeira-prateleira-um {
+    top: 57px;
+}
+
+.geladeira-prateleira-dois {
+    top: 106px;
+}
+
+.geladeira-porta {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border: 1px solid #cbd4cc;
+    border-radius: 7px;
+    background: linear-gradient(110deg, #fff 0%, #f5f7f4 70%, #e5eae5 100%);
+    box-shadow: 4px 2px 8px rgba(35, 55, 42, 0.13);
+    transform-origin: left center;
+    transition: transform 650ms cubic-bezier(0.2, 0.75, 0.25, 1);
+    backface-visibility: visible;
+}
+
+.geladeira-porta::before {
+    position: absolute;
+    top: 37%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: #dce2dc;
+    content: "";
+}
+
+.geladeira-puxador {
+    position: absolute;
+    top: 48%;
+    right: 10px;
+    width: 5px;
+    height: 32px;
+    border-radius: 5px;
+    background: #829286;
+    box-shadow: inset 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.ingredientes-ilustracao:hover .geladeira-porta {
+    transform: rotateY(-68deg);
+}
+
+.ingredientes-painel {
+    background: white;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: var(--sombra);
+}
+
+.ingredientes-painel h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--verde-escuro);
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.ingredientes-painel > p {
+    color: var(--cinza);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.ingredientes-opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 26px;
+}
+
+.ingrediente-opcao {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #dce5db;
+    border-radius: 30px;
+    background: white;
+    padding: 9px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--verde);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ingrediente-opcao:hover {
+    border-color: var(--verde);
+}
+
+.ingrediente-opcao.selecionado {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: white;
+}
+
+.resultado-ingredientes {
+    margin-top: 24px;
+}
+
+.resultado-ingredientes:empty {
+    display: none;
+}
+
+.resultado-ingredientes h4 {
+    font-size: 17px;
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+}
+
+.resultado-ingredientes p {
+    font-size: 14px;
+    color: var(--cinza);
+}
+
+.sugestao-receita {
+    background: var(--creme);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.sugestao-receita strong {
+    display: block;
+    color: var(--verde-escuro);
+    margin-bottom: 5px;
+}
+
+.sugestao-receita p {
+    margin-bottom: 10px;
+}
+
+.sugestao-receita button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--verde);
+    font-weight: 700;
+}
+
+/* ========================================
+   SOBRE
+======================================== */
+
+.sobre {
+    text-align: center;
+}
+
+.sobre-conteudo {
+    max-width: 760px;
+}
+
+.sobre h2 {
+    font-size: clamp(33px, 4vw, 50px);
+}
+
+.sobre p {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    color: var(--cinza);
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape {
+    background: var(--verde-escuro);
+    color: white;
+    padding: 55px 0 22px;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 45px;
+}
+
+.rodape h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.rodape-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rodape-icone {
+    display: block;
+    width: 56px;
+    height: 56px;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+.rodape p {
+    color: #d0ddd2;
+    font-size: 14px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.rodape-links a {
+    color: #e4eee5;
+    font-size: 13px;
+}
+
+.rodape-links a:hover {
+    text-decoration: underline;
+}
+
+.rodape-final {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    color: #c6d5c8;
+    font-size: 12px;
+}
+
+/* ========================================
+   MODAL DE RECEITA
+======================================== */
+
+.modal-fundo {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(17, 31, 22, 0.75);
+    padding: 20px;
+}
+
+.modal-conteudo {
+    position: relative;
+    width: min(720px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
+}
+
+.modal-fechar {
+    position: sticky;
+    top: 15px;
+    float: right;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    margin: 15px 15px -57px 0;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: var(--verde-escuro);
+    font-size: 21px;
+    box-shadow: var(--sombra);
+}
+
+.modal-fechar:hover {
+    background: var(--verde-claro);
+}
+
+.modal-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 0 25px;
+    padding: 9px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: white;
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s;
+}
+
+.modal-voltar:hover {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+.modal-imagem {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+.modal-corpo {
+    padding: 35px;
+}
+
+.modal-corpo h2 {
+    font-size: 35px;
+    color: var(--verde-escuro);
+    margin: 10px 0 15px;
+}
+
+.modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: var(--cinza);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.modal-corpo h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--verde-escuro);
+    font-size: 23px;
+    margin: 27px 0 14px;
+}
+
+.modal-corpo li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.modal-corpo ul,
+.modal-corpo ol {
+    padding-left: 23px;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 1050px) {
+    .menu {
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .grade-categorias {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grade-receitas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grade-paises {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ingredientes-layout {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 760px) {
+    .cabecalho-conteudo {
+        min-height: 72px;
+    }
+
+    .botao-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-bottom: 1px solid var(--borda);
+        box-shadow: var(--sombra);
+    }
+
+    .menu.aberto {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 12px;
+        font-size: 15px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero,
+    .hero-overlay {
+        min-height: 500px;
+    }
+
+    .hero {
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .busca-secao {
+        margin-top: -20px;
+    }
+
+    .secao {
+        padding: 65px 0;
+    }
+
+    .titulo-secao {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .grade-categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .categoria-card {
+        height: 215px;
+    }
+
+    .grade-paises {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ingredientes-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+    }
+
+    .receita-card img {
+        height: 200px;
+    }
+
+    .receita-card-conteudo {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo-icone {
+        width: 64px;
+        height: 64px;
+    }
+
+    .botao-menu {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .hero,
+    .hero-overlay {
+        min-height: 430px;
+    }
+
+    .hero-conteudo {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 10vw, 40px);
+    }
+
+    .hero p {
+        margin-bottom: 24px;
+    }
+
+    .etiqueta {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .busca-box {
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+
+    .busca-box input {
+        width: calc(100% - 50px);
+        flex: 1;
+        font-size: 13px;
+    }
+
+    .busca-box .botao {
+        width: 100%;
+    }
+
+    .secao {
+        padding: 52px 0;
+    }
+
+    .titulo-secao {
+        margin-bottom: 28px;
+    }
+
+    .titulo-secao h2,
+    .ingredientes-texto h2,
+    .sobre h2 {
+        font-size: 32px;
+    }
+
+    .link-botao {
+        min-height: 44px;
+    }
+
+    .filtros {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+    }
+
+    .filtro {
+        flex: 0 0 auto;
+        min-height: 44px;
+    }
+
+    .grade-categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .categoria-card {
+        height: 180px;
+    }
+
+    .categoria-nome {
+        font-size: 14px;
+    }
+
+    .grade-receitas {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-paises {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .pais-card {
+        padding: 17px;
+        min-height: 210px;
+    }
+
+    .pais-card h3 {
+        font-size: 20px;
+    }
+
+    .ingredientes-painel {
+        padding: 23px;
+    }
+
+    .ingredientes-opcoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ingrediente-opcao {
+        min-height: 44px;
+    }
+
+    .rodape-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .modal-conteudo {
+        max-height: 92vh;
+    }
+
+    .modal-voltar {
+        min-height: 44px;
+    }
+
+    .modal-corpo {
+        padding: 23px;
+    }
+
+    .modal-imagem {
+        height: 210px;
+    }
+
+    .modal-corpo h2 {
+        font-size: 29px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .geladeira-porta {
+        transform: none !important;
+    }
+}
+/* ========================================
+   BANDEIRAS DOS PAÍSES
+======================================== */
+
+.bandeira {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.bandeira img {
+    display: block;
+    width: 64px;
+    height: 43px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease;
+}
+
+.pais-card:hover .bandeira img {
+    transform: scale(1.08);
+}
+
+@media (max-width: 520px) {
+    .bandeira img {
+        width: 54px;
+        height: 36px;
+    }
+}

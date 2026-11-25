@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uma Pitada de Tudo - Receitas</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- FAIXA SUPERIOR -->
+    <div class="faixa-topo">
+        ★★★ O MELHOR SITE DE RECEITAS DO MUNDO!!! ★★★
+        RECEITAS INCRÍVEIS TODOS OS DIAS!!!
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>🍳 uma pitada de tudo</h1>
+
+        <button onclick="abrirCadastro()">
+            CADASTRE-SE AGORA!!!
+        </button>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#" onclick="mostrarTodas()">HOME</a>
+        <a href="#receitas" onclick="mostrarTodas()">RECEITAS</a>
+        <a href="#receitas" onclick="filtrarCategoria('Doces')">DOCES</a>
+        <a href="#receitas" onclick="filtrarCategoria('Bolos')">BOLOS</a>
+        <a href="#receitas" onclick="filtrarCategoria('Salgados')">SALGADOS</a>
+        <a href="#receitas" onclick="filtrarCategoria('Massas')">MASSAS</a>
+        <a href="#receitas" onclick="filtrarCategoria('Bebidas')">BEBIDAS</a>
+        <a href="#contato">CONTATO</a>
+    </nav>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div class="layout">
+
+        <main>
+
+            <!-- BANNER -->
+            <section class="banner">
+                <h2>RECEITAS DELICIOSAS!!!</h2>
+
+                <p>
+                    APRENDA A FAZER AS MELHORES COMIDAS
+                    AQUI NO NOSSO SITE!!!
+                </p>
+
+                <button onclick="document.getElementById('receitas').scrollIntoView()">
+                    VER RECEITAS!!!
+                </button>
+            </section>
+
+            <!-- PESQUISA -->
+            <div class="pesquisa">
+                <label for="busca">Buscar:</label>
+
+                <input
+                    type="text"
+                    id="busca"
+                    placeholder="Receita..."
+                >
+
+                <button onclick="pesquisarReceitas()">
+                    OK
+                </button>
+            </div>
+
+            <!-- RECEITAS -->
+            <section id="receitas">
+
+                <h2>CONFIRA NOSSAS RECEITAS!!!</h2>
+
+                <div id="lista-receitas" class="lista-receitas">
+                    <!-- Receitas inseridas pelo JavaScript -->
+                </div>
+
+            </section>
+
+            <!-- DETALHES DA RECEITA -->
+            <section id="detalhes-receita" class="detalhes escondido">
+
+                <button onclick="voltarReceitas()">
+                    ⬅ VOLTAR
+                </button>
+
+                <div id="conteudo-receita"></div>
+
+            </section>
+
+        </main>
+
+        <!-- ANÚNCIOS LATERAIS -->
+        <aside>
+
+            <div class="anuncio anuncio1">
+                <h2>SUPER OFERTA!!!</h2>
+                <p>VOCÊ GANHOU UM PRÊMIO!!!</p>
+                <button onclick="abrirCadastro()">CLIQUE AQUI!!!</button>
+            </div>
+
+            <div class="anuncio anuncio2">
+                <h2>ATENÇÃO!!!</h2>
+                <p>RECEBA RECEITAS GRÁTIS!!!</p>
+                <button onclick="abrirCadastro()">QUERO AGORA!</button>
+            </div>
+
+            <div class="anuncio anuncio3">
+                <h2>OFERTA IMPERDÍVEL</h2>
+                <p>CADASTRE-SE HOJE!!!</p>
+                <button onclick="abrirCadastro()">CADASTRAR</button>
+            </div>
+
+            <div class="anuncio anuncio4">
+                <h2>🍔 COMIDA!!!</h2>
+                <p>VEJA NOSSAS RECEITAS!</p>
+                <button onclick="mostrarTodas()">VER MAIS</button>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer id="contato">
+        <h3>UMA PITADA DE TUDO</h3>
+
+        <p>O MELHOR SITE DE RECEITAS!!!</p>
+
+        <p>Contato: contato@exemplo.com (demonstrativo)</p>
+
+        <p>© 2026 - Projeto acadêmico de UI/UX</p>
+    </footer>
+
+    <!-- POP-UP INTRUSIVO -->
+    <div id="popup" class="fundo-popup">
+
+        <div class="popup">
+
+            <button class="fechar" onclick="fecharPopup()">
+                X
+            </button>
+
+            <h2 id="titulo-anuncio-popup">ATENÇÃO!!!</h2>
+
+            <h1 id="destaque-anuncio-popup">GANHE R$500!!!</h1>
+
+            <p id="texto-anuncio-popup">
+                CADASTRE-SE AGORA E RECEBA
+                NOSSAS OFERTAS!!!
+            </p>
+
+            <button class="botao-popup" onclick="abrirCadastro()">
+                SIM!!! EU QUERO!!!
+            </button>
+
+            <p class="aviso-ficticio">
+                Promoção fictícia para demonstração acadêmica.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CADASTRO -->
+    <div id="modal-cadastro" class="fundo-popup escondido">
+
+        <div class="popup cadastro">
+
+            <button class="fechar" onclick="fecharCadastro()">
+                X
+            </button>
+
+            <h2>CADASTRE-SE!!!</h2>
+
+            <form id="form-cadastro">
+
+                <label for="nome">NOME:</label>
+                <input type="text" id="nome" required>
+
+                <label for="email">E-MAIL:</label>
+                <input type="email" id="email" required>
+
+                <button type="submit">
+                    ENVIAR!!!
+                </button>
+
+            </form>
+
+            <p>Cadastro demonstrativo. Nenhum dado será enviado.</p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

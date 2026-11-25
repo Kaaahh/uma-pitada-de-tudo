@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Descubra receitas deliciosas, práticas e fáceis de preparar.">
+
+    <title>Uma Pitada de Tudo | Receitas para todos os momentos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+
+            <a href="#inicio" class="logo" aria-label="Uma Pitada de Tudo, página inicial">
+                <img class="logo-icone" src="imagens/logo-pitada.png" alt="">
+                <span>Uma Pitada <strong>De Tudo.</strong></span>
+            </a>
+
+            <nav class="menu" aria-label="Menu principal">
+                <a href="#inicio">Início</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#receitas">Receitas</a>
+                <a href="#mundo">Pelo mundo</a>
+                <a href="#ingredientes">Minha cozinha</a>
+            </nav>
+
+            <button class="botao-menu" id="botao-menu" aria-label="Abrir menu" aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section id="inicio" class="hero">
+            <div class="hero-overlay">
+                <div class="container hero-conteudo">
+
+                    <span class="etiqueta">FEITO COM CARINHO ♡</span>
+
+                    <h1>
+                        Toda receita tem
+                        <em>uma história.</em>
+                    </h1>
+
+                    <p>
+                        Descubra novos sabores, encontre inspiração
+                        e transforme ingredientes simples em momentos especiais.
+                    </p>
+
+                    <a href="#receitas" class="botao botao-claro">
+                        Explorar receitas
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PESQUISA -->
+        <section class="busca-secao">
+            <div class="container">
+
+                <form class="busca-box" id="form-busca" role="search">
+                    <span class="busca-icone" aria-hidden="true">⌕</span>
+
+                    <input
+                        type="search"
+                        id="campo-busca"
+                        placeholder="O que você gostaria de cozinhar hoje?"
+                        aria-label="Pesquisar receitas"
+                    >
+
+                    <button type="submit" class="botao botao-verde">
+                        Buscar receita
+                    </button>
+                </form>
+
+            </div>
+        </section>
+
+        <!-- CATEGORIAS -->
+        <section id="categorias" class="secao">
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <div>
+                        <span class="subtitulo">ENCONTRE SUA INSPIRAÇÃO</span>
+                        <h2>Explore por categoria</h2>
+                        <p>Tem sempre uma receita perfeita para cada vontade.</p>
+                    </div>
+                </div>
+
+                <div class="grade-categorias">
+
+                    <button type="button" class="categoria-card" data-categoria="Salgados">
+                        <img
+                            src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=85"
+                            alt="Salgados dourados"
+                        >
+                        <span class="categoria-nome">Salgados <span>↗</span></span>
+                    </button>
+
+                    <button type="button" class="categoria-card" data-categoria="Doces">
+                        <img
+                            src="imagens/brigadeiro.jpg"
+                            alt="Brigadeiros de chocolate"
+                            loading="lazy"
+                        >
+                        <span class="categoria-nome">Doces <span>↗</span></span>
+                    </button>
+
+                    <button type="button" class="categoria-card" data-categoria="Massas">
+                        <img
+                            src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=85"
+                            alt="Prato de macarrão"
+                        >
+                        <span class="categoria-nome">Massas <span>↗</span></span>
+                    </button>
+
+                    <button type="button" class="categoria-card" data-categoria="Bolos">
+                        <img
+                            src="imagens/bolo-cenoura.jpg"
+                            alt="Bolo caseiro de cenoura"
+                            loading="lazy"
+                        >
+                        <span class="categoria-nome">Bolos <span>↗</span></span>
+                    </button>
+
+                    <button type="button" class="categoria-card" data-categoria="Bebidas">
+                        <img
+                            src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=85"
+                            alt="Bebida refrescante"
+                        >
+                        <span class="categoria-nome">Bebidas <span>↗</span></span>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- RECEITAS -->
+        <section id="receitas" class="secao secao-creme">
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <div>
+                        <span class="subtitulo">ESCOLHIDAS PARA VOCÊ</span>
+                        <h2>Receitas para se inspirar</h2>
+                        <p>Encontre algo gostoso para preparar hoje.</p>
+                    </div>
+
+                    <button type="button" id="ver-todas" class="link-botao">
+                        Ver todas as receitas →
+                    </button>
+                </div>
+
+                <div class="filtros" aria-label="Filtrar receitas por categoria">
+                    <button type="button" class="filtro ativo" data-filtro="Todas" aria-pressed="true">Todas</button>
+                    <button type="button" class="filtro" data-filtro="Salgados" aria-pressed="false">Salgados</button>
+                    <button type="button" class="filtro" data-filtro="Doces" aria-pressed="false">Doces</button>
+                    <button type="button" class="filtro" data-filtro="Massas" aria-pressed="false">Massas</button>
+                    <button type="button" class="filtro" data-filtro="Bolos" aria-pressed="false">Bolos</button>
+                    <button type="button" class="filtro" data-filtro="Bebidas" aria-pressed="false">Bebidas</button>
+                </div>
+
+                <p id="resultado-busca" class="resultado-busca" aria-live="polite"></p>
+                <div id="grade-receitas" class="grade-receitas">
+                    <!-- Cards criados pelo JavaScript -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RECEITAS PELO MUNDO -->
+        <section id="mundo" class="secao">
+            <div class="container">
+
+                <div class="titulo-secao">
+                    <div>
+                        <span class="subtitulo">UMA VIAGEM DE SABORES</span>
+                        <h2>Sabores pelo mundo</h2>
+                        <p>Conheça pratos que contam histórias de diferentes países.</p>
+                    </div>
+                </div>
+
+                <div class="grade-paises">
+
+                    <!-- BRASIL -->
+                    <button type="button" class="pais-card" data-pais="Brasil">
+                        <span class="bandeira">
+                            <img
+                                src="https://flagcdn.com/w160/br.png"
+                                alt="Bandeira do Brasil"
+                                loading="lazy"
+                            >
+                        </span>
+                        <h3>Brasil</h3>
+                        <p>Sabores que abraçam</p>
+                        <span class="pais-seta">Explorar ↗</span>
+                    </button>
+
+                    <!-- ITÁLIA -->
+                    <button type="button" class="pais-card" data-pais="Itália">
+                        <span class="bandeira">
+                            <img
+                                src="https://flagcdn.com/w160/it.png"
+                                alt="Bandeira da Itália"
+                                loading="lazy"
+                            >
+                        </span>
+                        <h3>Itália</h3>
+                        <p>Massas e tradição</p>
+                        <span class="pais-seta">Explorar ↗</span>
+                    </button>
+
+                    <!-- ESTADOS UNIDOS -->
+                    <button type="button" class="pais-card" data-pais="Estados Unidos">
+                        <span class="bandeira">
+                            <img
+                                src="https://flagcdn.com/w160/us.png"
+                                alt="Bandeira dos Estados Unidos"
+                                loading="lazy"
+                            >
+                        </span>
+                        <h3>Estados Unidos</h3>
+                        <p>Clássicos irresistíveis</p>
+                        <span class="pais-seta">Explorar ↗</span>
+                    </button>
+
+                    <!-- FRANÇA -->
+                    <button type="button" class="pais-card" data-pais="França">
+                        <span class="bandeira">
+                            <img
+                                src="https://flagcdn.com/w160/fr.png"
+                                alt="Bandeira da França"
+                                loading="lazy"
+                            >
+                        </span>
+                        <h3>França</h3>
+                        <p>Um toque de elegância</p>
+                        <span class="pais-seta">Explorar ↗</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BUSCA POR INGREDIENTES -->
+        <section id="ingredientes" class="secao secao-ingredientes">
+            <div class="container ingredientes-layout">
+
+                <div class="ingredientes-texto">
+
+                    <span class="subtitulo">SUA COZINHA, SUAS POSSIBILIDADES</span>
+
+                    <h2>
+                        O que tem na
+                        <em>sua geladeira?</em>
+                    </h2>
+
+                    <p>
+                        Selecione os ingredientes que você tem em casa
+                        e descubra receitas que pode preparar com eles.
+                    </p>
+
+                    <div class="ingredientes-ilustracao" aria-hidden="true">
+                        <div class="geladeira-animacao">
+                            <div class="geladeira-cabine">
+                                <span class="geladeira-item geladeira-leite"></span>
+                                <span class="geladeira-item geladeira-ovos"></span>
+                                <span class="geladeira-item geladeira-tomate"></span>
+                                <span class="geladeira-item geladeira-alface"></span>
+                                <span class="geladeira-prateleira geladeira-prateleira-um"></span>
+                                <span class="geladeira-prateleira geladeira-prateleira-dois"></span>
+                            </div>
+                            <div class="geladeira-porta">
+                                <span class="geladeira-puxador"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ingredientes-painel">
+
+                    <h3>Escolha seus ingredientes</h3>
+                    <p>Você pode selecionar quantos quiser.</p>
+
+                    <div id="lista-ingredientes" class="ingredientes-opcoes">
+                        <!-- Opções criadas pelo JavaScript -->
+                    </div>
+
+                    <button id="buscar-ingredientes" class="botao botao-verde botao-largo">
+                        Encontrar receitas →
+                    </button>
+
+                    <div id="resultado-ingredientes" class="resultado-ingredientes" aria-live="polite"></div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section class="secao sobre">
+            <div class="container sobre-conteudo">
+
+                <span class="subtitulo">COZINHAR É COMPARTILHAR</span>
+
+                <h2>Uma pitada de amor em cada receita.</h2>
+
+                <p>
+                    Acreditamos que cozinhar pode ser simples, prazeroso
+                    e cheio de descobertas. Aqui, cada receita é um convite
+                    para criar boas lembranças.
+                </p>
+
+                <a href="#inicio" class="botao botao-verde">
+                    Voltar ao início ↑
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+
+            <div>
+                <h3 class="rodape-marca">
+                    <img class="rodape-icone" src="imagens/logo-pitada.png" alt="">
+                    <span>Uma Pitada De Tudo.</span>
+                </h3>
+                <p>Receitas, histórias e sabores para compartilhar.</p>
+            </div>
+
+            <div class="rodape-links">
+                <a href="#inicio">Início</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#receitas">Receitas</a>
+                <a href="#ingredientes">Minha cozinha</a>
+            </div>
+
+        </div>
+
+        <div class="container rodape-final">
+            © 2026 Uma Pitada de Tudo • Projeto acadêmico de UI/UX
+        </div>
+    </footer>
+
+    <!-- MODAL DE RECEITA -->
+    <div id="modal-receita" class="modal-fundo escondido" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+
+        <div class="modal-conteudo">
+
+            <button id="fechar-receita" class="modal-fechar" aria-label="Fechar receita">
+                ✕
+            </button>
+
+            <button type="button" id="voltar-receitas" class="modal-voltar">
+                ← Voltar às receitas
+            </button>
+
+            <div id="detalhes-receita">
+                <!-- Conteúdo inserido pelo JavaScript -->
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
